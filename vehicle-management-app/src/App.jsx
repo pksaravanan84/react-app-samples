@@ -1,21 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import CarDetail from './CarDetail'
-import Menu from './Menu'
-import Container from 'react-bootstrap/Container';
+import "./App.css";
+import CarList from "./CarList";
+import { useState } from "react";
+
 
 function App() {
 
+  //const [p, setP] = useState();
+
   return (
     <>
-    <Container>
-      <Menu></Menu>
-      <CarDetail title="Toyota" description="Toyota is an awesome car!"></CarDetail>
-      </Container>
+        <CarList></CarList>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

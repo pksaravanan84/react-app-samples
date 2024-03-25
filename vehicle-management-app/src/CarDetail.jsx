@@ -1,28 +1,28 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import PropTypes from "prop-types";
+import { useParams } from "react-router-dom";
 
 export default function CarDetail(props) {
+
+
+  function deleteCarDetails() {
+      console.log(props.carInfo);
+  }
+
   return (
-    <Card style={{ width: "18rem" }}>
-      <Card.Img variant="top" src="holder.js/100px180" />
-      <Card.Body>
-        <Card.Title>{props.title}</Card.Title>
-        <Card.Text>{props.description}</Card.Text>
-        <Button variant="primary">Edit</Button>
-        <Button variant="danger">Delete</Button>
-      </Card.Body>
-    </Card>
+    <>
+      <Card style={{ width: "20rem" }}>
+        <Card.Body>
+          <Card.Title>{props.carInfo.make}</Card.Title>
+          <Card.Text>Model: {props.carInfo.model}</Card.Text>
+          <Card.Text>Year: {props.carInfo.year}</Card.Text>
+          <Card.Text>VIN: {props.carInfo.vin}</Card.Text>
+          <Card.Text>Price: ${props.carInfo.price}</Card.Text>
+          <a variant="primary" href="/EditCarDetails/1">Edit</a>{" "}
+          <a variant="danger" href="#" onClick={deleteCarDetails}>Delete</a>{" "}
+        </Card.Body>
+      </Card>
+    </>
   );
-
-  CarDetail.propTypes = {
-    title: PropTypes.string,
-    description: PropTypes.string,
-  };
-
-  CarDetail.defaultProps = {
-    title: "Card Title",
-    description:
-      "Some quick example text to build on the card title and make up the bulk of the card's content.",
-  };
 }
