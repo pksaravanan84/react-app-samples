@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 import Menu from "./Menu";
 import Container from "react-bootstrap/Container";
 import AddCarDetail from "./AddCarDetail";
@@ -14,7 +14,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />
+    element: <App />,
   },
   {
     path: "/AddCarDetail/",
@@ -31,7 +31,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     {/* <App /> */}
     <>
       <Container>
-        <Menu></Menu>
+        {/* <Menu></Menu> */}
         <RouterProvider router={router}></RouterProvider>
       </Container>
     </>
